@@ -13,7 +13,7 @@ require_once 'routes/routes.php';
  * Can be overwritten by using the namespace config option on your routes.
  */
 
-SimpleRouter::setDefaultNamespace('\app\Controller');
+SimpleRouter::setDefaultNamespace('\app\Controllers');
 
 // Start the routing
 SimpleRouter::start();
