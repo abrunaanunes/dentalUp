@@ -3,10 +3,13 @@
 namespace app\Controllers\Admin;
 
 use app\Controllers\Controller;
+use app\Helpers\Render;
 
 class DashboardController implements Controller
 {
 
+    use Render;
+    
     public function index()
     {
         return $this->RenderHtml('dashboard', []);
@@ -35,15 +38,5 @@ class DashboardController implements Controller
     public function destroy($id)
     {
 
-    }
-
-    public function RenderHtml(string $view, array $data)
-    {
-        extract($data);
-        ob_start();
-        require $_SERVER['DOCUMENT_ROOT'] . '/' .'views/' . $view . '.php';
-        $html = ob_get_clean();
-
-        return $html;
     }
 }

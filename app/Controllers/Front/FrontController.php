@@ -2,9 +2,12 @@
 namespace app\Controllers\Front;
 
 use app\Controllers\Controller;
+use app\Helpers\Render;
 
 class FrontController implements Controller
 {
+    use Render;
+    
     public function index()
     {
         return $this->RenderHtml('index', []);
@@ -15,7 +18,7 @@ class FrontController implements Controller
 
     }
 
-    public function store($request)
+    public function store()
     {
 
     }
@@ -33,16 +36,6 @@ class FrontController implements Controller
     public function destroy($id)
     {
 
-    }
-
-    public function RenderHtml(string $view, array $data)
-    {
-        extract($data);
-        ob_start();
-        require $_SERVER['DOCUMENT_ROOT'] . '/' .'views/' . $view . '.php';
-        $html = ob_get_clean();
-
-        return $html;
     }
 
     public function login()
