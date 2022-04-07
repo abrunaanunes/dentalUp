@@ -5,9 +5,10 @@
         "psr-4": {
             "App\\": "app/"
         },
-        "classmap": ["app/"]
+        "classmap": ["app/", "database/"]
     },
     "require": {
-        "pecee/simple-router": "4.3.7.2"
+        "pecee/simple-router": "4.3.7.2",
+        "filp/whoops": "^2.14"
     }
 }

@@ -1,14 +1,14 @@
 <?php
 //site name
-define('SITE_NAME', 'your-site-name');
+if (!defined('SITE_NAME')) define('SITE_NAME', 'your-site-name');
 
 //App Root
-define('APP_ROOT', dirname(dirname(__FILE__)));
-define('URL_ROOT', '/');
-define('URL_SUBFOLDER', '');
+if (!defined('APP_ROOT')) define('APP_ROOT', dirname(dirname(__FILE__)));
+if (!defined('URL_ROOT')) define('URL_ROOT', '/');
+if (!defined('URL_SUBFOLDER')) define('URL_SUBFOLDER', '');
 
 //DB Params
-define('DB_HOST', 'your-host');
-define('DB_USER', 'your-username');
-define('DB_PASS', 'your-password');
-define('DB_NAME', 'your-db-name');
+if (!defined('DB_HOST')) define('DB_HOST', 'localhost');
+if (!defined('DB_USER')) define('DB_USER', 'root');
+if (!defined('DB_PASS')) define('DB_PASS', 'M4tr1x123');
+if (!defined('DB_NAME')) define('DB_NAME', 'web_servidor');
