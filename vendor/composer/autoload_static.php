@@ -7,8 +7,13 @@ namespace Composer\Autoload;
 class ComposerStaticInit249d8b721e7d893cfabbb218159852c6
 {
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Pecee\\' => 6,
         ),
         'A' => 
@@ -18,6 +23,14 @@ class ComposerStaticInit249d8b721e7d893cfabbb218159852c6
     );
 
     public static $prefixDirsPsr4 = array (
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Pecee\\' => 
         array (
             0 => __DIR__ . '/..' . '/pecee/simple-router/src/Pecee',
@@ -35,6 +48,7 @@ class ComposerStaticInit249d8b721e7d893cfabbb218159852c6
         'app\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Controllers/Controller.php',
         'app\\Controllers\\Front\\FrontController' => __DIR__ . '/../..' . '/app/Controllers/Front/FrontController.php',
         'app\\Helpers\\Render' => __DIR__ . '/../..' . '/app/Helpers/Render.php',
+        'app\\Helpers\\Request' => __DIR__ . '/../..' . '/app/Helpers/Request.php',
         'app\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Model.php',
         'app\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
     );

@@ -12,6 +12,7 @@ return array(
     'app\\Controllers\\Controller' => $baseDir . '/app/Controllers/Controller.php',
     'app\\Controllers\\Front\\FrontController' => $baseDir . '/app/Controllers/Front/FrontController.php',
     'app\\Helpers\\Render' => $baseDir . '/app/Helpers/Render.php',
+    'app\\Helpers\\Request' => $baseDir . '/app/Helpers/Request.php',
     'app\\Models\\Product' => $baseDir . '/app/Models/Model.php',
     'app\\Models\\User' => $baseDir . '/app/Models/User.php',
 );
