@@ -16,8 +16,7 @@ SimpleRouter::group([
     ],function () {
         SimpleRouter::get('/', 'UserController@index');
         SimpleRouter::get('/create', 'UserController@create');
-        SimpleRouter::get('/create', 'UserController@create');
-        SimpleRouter::get('/store', 'UserController@store');
+        SimpleRouter::post('/store', 'UserController@store');
         SimpleRouter::get('/edit', 'UserController@edit');
         SimpleRouter::get('/update', 'UserController@update');
         SimpleRouter::get('/destroy', 'UserController@destroy');
