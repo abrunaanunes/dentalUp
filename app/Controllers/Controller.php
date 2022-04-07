@@ -9,7 +9,7 @@ interface Controller
 
     public function create();
 
-    public function store($request);
+    public function store();
 
     public function edit($id);
 

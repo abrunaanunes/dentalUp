@@ -12,15 +12,15 @@ class DashboardController implements Controller
     
     public function index()
     {
-        return $this->RenderHtml('dashboard', []);
+        return $this->RenderHtml('dashboard.php', []);
     }
 
     public function create()
     {
-        return $this->RenderHtml('register', []);
+        return $this->RenderHtml('register.php', []);
     }
 
-    public function store($request)
+    public function store()
     {
 
     }
