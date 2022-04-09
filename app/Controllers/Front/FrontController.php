@@ -54,4 +54,8 @@ class FrontController implements Controller
     {
         return $this->RenderHtml('register', []);
     }
+    public function dashboard()
+    {
+        return $this->RenderHtml('dashboard', []);
+    }
 }

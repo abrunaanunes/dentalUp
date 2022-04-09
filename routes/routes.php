@@ -8,6 +8,7 @@ SimpleRouter::group([
     SimpleRouter::get('/', 'FrontController@index');
     SimpleRouter::get('/login', 'FrontController@login');
     SimpleRouter::get('/register', 'FrontController@register');
+    SimpleRouter::get('/dashboard', 'FrontController@dashboard');
 });
 
 SimpleRouter::group([

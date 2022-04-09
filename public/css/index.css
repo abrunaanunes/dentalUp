@@ -1,0 +1,44 @@
+html {
+    background: #BCE0D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background: #fff;
+    width: 21.875rem;
+    height: 21.875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 260px;
+    height: 24px;
+    border-radius: 5px;
+    background: #F9F9F9;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    color: #fff;
+    margin: 1rem;
+    width: 7.75rem;
+    height: 1.5rem;
+    background: #BCE0D9;
+    border-radius: 1rem;
+}

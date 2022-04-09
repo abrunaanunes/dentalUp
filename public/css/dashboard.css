@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ecf0f1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+}
+
+.buttons {
+    display: flex;
+    place-self: flex-end;
+    padding: 0.5rem;
+}
+
+.button {
+    width: 70px;
+    height: 30px;
+    border-radius: 0.5rem;
+    border: none;
+    background: #58af9b;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 960px;
+    height: 50%;
+    align-items: center;
+    position: relative;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.card {
+    margin: 1rem;
+    width: 12.5rem;
+    height: 18.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: #58af9b;
+    color: #fff;
+    cursor: pointer;
+}
+
+h1 {
+    color: #58af9b;
+}
+
+h2 {
+    color: #58af9b;
+    margin-bottom: 1.5rem;
+}
+
+button:hover {
+    border: 2px solid #ecf0f1;
+    transition: background-color .5s;
+}
+
+p {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.logout {
+    display: flex;
+    justify-content: end;
+    padding: 0.5rem;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.375rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    background: #58af9b;
+    color: #fff;
+    cursor: pointer;
+}
