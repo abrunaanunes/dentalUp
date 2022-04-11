@@ -15,6 +15,7 @@ class Connection {
     {
         $this->connect();
         $this->createUserTable();
+        $this->insertUser('Administrador', 'admin@dentalup.com', password_hash('dentalup123', PASSWORD_DEFAULT));
     }
 
     public function connect()
@@ -43,7 +44,7 @@ class Connection {
 
     public function insertUser($name, $email, $password) 
     {
-        $sql = $this->mysql->prepare("INSERT INTO users (`name`, `email`, `password`, `is_active`) VALUES (?,?,?,?)");
+        $sql = $this->mysql->prepare("INSERT IGNORE INTO users (`name`, `email`, `password`, `is_active`) VALUES (?,?,?,?)");
         $sql->bind_param($name, $email, $password, true);
         if( $sql->execute() == TRUE){
             return true ;
