@@ -5,7 +5,6 @@ namespace app\Controllers;
 use app\Controllers\Controller;
 use app\Helpers\Render;
 use app\Models\User;
-use database\Connection;
 
 class UserController implements Controller
 {
@@ -74,6 +73,7 @@ class UserController implements Controller
             $this->userModel->setName($data['name']);
             $this->userModel->setEmail($data['email']);
             $this->userModel->setPassword($data['password']);
+            $this->userModel->setIsActive(1);
             
             if($this->userModel->setUser()) {
                 $this->RenderHtml('dashboard.php', []);

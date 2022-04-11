@@ -14,7 +14,7 @@ class FrontController
 
     public function register()
     {
-        return $this->RenderHtml('register', []);
+        return $this->RenderHtml('register.php', []);
     }
 
     public function login() {
