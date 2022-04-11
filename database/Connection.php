@@ -8,7 +8,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/' . 'config/config.php');
 
 class Connection {
 
-    protected $mysql;
+    public $mysql;
     protected $sql;
 
     public function __construct()

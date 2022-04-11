@@ -7,7 +7,7 @@ trait Render {
     {
         extract($data);
         ob_start();
-        require $_SERVER['DOCUMENT_ROOT'] . '/' .'views/' . $view;
+        require $_SERVER['DOCUMENT_ROOT'] . '/' .'views' . '/' . $view;
         $html = ob_get_clean();
 
         return $html;
