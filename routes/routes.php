@@ -7,7 +7,7 @@ SimpleRouter::group([
     SimpleRouter::get('/', 'FrontController@index');
     SimpleRouter::post('/login', 'FrontController@login');
     SimpleRouter::get('/register', 'FrontController@register');
-    SimpleRouter::get('/dashboard', 'FrontController@dashboard');
+    SimpleRouter::get('/dashboard', 'DashboardController@index');
 });
 
 SimpleRouter::group([
@@ -18,12 +18,6 @@ SimpleRouter::group([
         SimpleRouter::get('/edit', 'UserController@edit');
         SimpleRouter::get('/update', 'UserController@update');
         SimpleRouter::get('/destroy', 'UserController@destroy');
-});
-
-SimpleRouter::group([
-    'prefix' => 'admin'
-],function () {
-    SimpleRouter::get('/', 'DashboardController@index');
 });
 
 // SimpleRouter::error(function(Request $request, \Exception $exception) {
