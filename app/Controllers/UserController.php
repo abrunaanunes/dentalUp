@@ -4,11 +4,13 @@ namespace app\Controllers;
 
 use app\Controllers\Controller;
 use app\Helpers\Render;
+use app\Helpers\Session;
 use app\Models\User;
 
 class UserController implements Controller
 {
     use Render;
+    use Session;
 
     private $userModel;
 
@@ -76,10 +78,13 @@ class UserController implements Controller
             $this->userModel->setIsActive(1);
             
             if($this->userModel->setUser()) {
-                $this->RenderHtml('dashboard.php', []);
+                $loggedInUser = $this->createUserSession($this->userModel);
+                if($loggedInUser) {
+                    header('location:' . $_SERVER['HTTP_HOST'] . '/dashboard');
+                }
             } else {
                 $errors['registerError'] = "Erro ao cadastrar usuário.";
-                $this->RenderHtml('dashboard.php', $errors);
+                $this->RenderHtml('register.php', $errors);
             };
         }
     }

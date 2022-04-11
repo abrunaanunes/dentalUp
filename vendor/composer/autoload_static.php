@@ -49,6 +49,7 @@ class ComposerStaticInit249d8b721e7d893cfabbb218159852c6
         'app\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Controllers/UserController.php',
         'app\\Helpers\\Render' => __DIR__ . '/../..' . '/app/Helpers/Render.php',
         'app\\Helpers\\Request' => __DIR__ . '/../..' . '/app/Helpers/Request.php',
+        'app\\Helpers\\Session' => __DIR__ . '/../..' . '/app/Helpers/Session.php',
         'app\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Model.php',
         'app\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'database\\Connection' => __DIR__ . '/../..' . '/database/Connection.php',

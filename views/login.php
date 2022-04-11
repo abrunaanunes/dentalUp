@@ -23,12 +23,7 @@
                   src="../public/img/create-account-office.jpeg"
                   alt="Office"
                 />
-                <img
-                  aria-hidden="true"
-                  class="hidden object-cover w-full h-full dark:block"
-                  src="../assets/img/login-office-dark.jpeg"
-                  alt="Office"
-                />
+                
               </div>
               <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
                 <div class="w-full">
@@ -46,7 +41,7 @@
                     }
                   ?>
     
-                  <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST']. '/login'; ?>" method="post" >
+                  <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST']. '/' . 'login'; ?>" method="post" >
                     <label for="email" class="block text-sm">
                       <span class="text-gray-700 dark:text-gray-400">E-mail</span>
                     </label>

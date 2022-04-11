@@ -74,4 +74,19 @@ class User
             return false;
         }
     }
+
+    public function login($email, $password) 
+    {
+        $sql = $this->mysql->prepare("SELECT * FROM users WHERE email = :email");
+        $sql->bind(':email', $email);
+        $row = $sql->single();
+
+        $hashedPassword = $row->password;
+
+        if (password_verify($password, $hashedPassword)) {
+            return true;
+        } 
+
+        return false;
+    }
 }
