@@ -3,18 +3,15 @@
 use Pecee\SimpleRouter\SimpleRouter;
 
 SimpleRouter::group([
-    'namespace' => 'Front'
 ],function () {
     SimpleRouter::get('/', 'FrontController@index');
-    SimpleRouter::get('/login', 'FrontController@login');
+    SimpleRouter::post('/login', 'FrontController@login');
     SimpleRouter::get('/register', 'FrontController@register');
 });
 
 SimpleRouter::group([
-        'prefix' => 'user',
-        'namespace' => 'Admin'
+        'prefix' => 'user'
     ],function () {
-        SimpleRouter::get('/', 'UserController@index');
         SimpleRouter::get('/create', 'UserController@create');
         SimpleRouter::post('/store', 'UserController@store');
         SimpleRouter::get('/edit', 'UserController@edit');
@@ -23,8 +20,7 @@ SimpleRouter::group([
 });
 
 SimpleRouter::group([
-    'prefix' => 'admin',
-    'namespace' => 'Admin'
+    'prefix' => 'admin'
 ],function () {
     SimpleRouter::get('/', 'DashboardController@index');
 });

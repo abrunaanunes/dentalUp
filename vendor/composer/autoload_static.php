@@ -43,10 +43,10 @@ class ComposerStaticInit249d8b721e7d893cfabbb218159852c6
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'app\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Controllers/Admin/DashboardController.php',
-        'app\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Controllers/Admin/UserController.php',
         'app\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Controllers/Controller.php',
-        'app\\Controllers\\Front\\FrontController' => __DIR__ . '/../..' . '/app/Controllers/Front/FrontController.php',
+        'app\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Controllers/DashboardController.php',
+        'app\\Controllers\\FrontController' => __DIR__ . '/../..' . '/app/Controllers/FrontController.php',
+        'app\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Controllers/UserController.php',
         'app\\Helpers\\Render' => __DIR__ . '/../..' . '/app/Helpers/Render.php',
         'app\\Helpers\\Request' => __DIR__ . '/../..' . '/app/Helpers/Request.php',
         'app\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Model.php',

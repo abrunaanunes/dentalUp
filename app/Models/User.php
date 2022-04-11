@@ -9,8 +9,14 @@ class User
     private $name;
     private $username;
     private $password;
+    private $db;
 
     //Setters
+
+    public function __construct()
+    {
+        $this->db = new Connection();
+    }
     public function setName($string)
     {
         $this->name = $string;
@@ -45,7 +51,16 @@ class User
     //Include
     public function setUser()
     {
-        $user = new Connection();
-        return $user->insertUser($this->getName(), $this->getEmail(), $this->getPassword());
+        return $this->db->insertUser($this->getName(), $this->getEmail(), $this->getPassword());
+    }
+
+    public function findUserByEmail($email) 
+    {
+        $select = mysqli_query($this->db->mysql, "SELECT * FROM users WHERE email = '" . $email . "'");
+        if(mysqli_num_rows($select)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
