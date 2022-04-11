@@ -38,6 +38,7 @@ body {
 .title {
     font-size: 28px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .title-primary {
     color: #fff;
@@ -130,18 +131,4 @@ input:-webkit-autofill
 .icon-modify {
     color: #7f8c8d;
     padding: 0 5px;
-}
-
-.second-content {
-    position: absolute;
-    display: flex;
-}
-.password {
-    color: #34495e;
-    font-size: 14px;
-    margin: 15px 0;
-    text-align: center;
-}
-.password::first-letter {
-    text-transform: capitalize;
 }
