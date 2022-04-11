@@ -39,6 +39,14 @@
                 Criar conta
               </h1>
 
+              <?php 
+                if(!empty($data)) {
+                  foreach($data as $message) {
+                    echo '<span style="font-size: 14px; color: red;">' . $message . '</span>';
+                  }
+                }
+              ?>
+
               <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST']. '/user/store'; ?>" method="post" >
                 <label class="block text-sm" for="name">
                   <span class="text-gray-700 dark:text-gray-400">Nome</span>
@@ -80,12 +88,12 @@
                   id="confirm_password"
                 />
 
-                <button 
+                <input 
                   type="submit"
+                  value="Cadastrar"
+                  name="submit_input"
                   class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                >
-                  Criar
-                </button>
+                />
               </form>
 
               <hr class="my-8" />

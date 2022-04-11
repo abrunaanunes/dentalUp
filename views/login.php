@@ -38,29 +38,42 @@
                   >
                     Login
                   </h1>
-                  <label class="block text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">E-mail</span>
-                  </label>
-                  <input
-                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="bruna@utfpr.com"
-                  />
+                  <?php 
+                    if(!empty($data)) {
+                      foreach($data as $message) {
+                        echo '<span style="font-size: 14px; color: red;">' . $message . '</span>';
+                      }
+                    }
+                  ?>
+                  <form action="<?php echo 'http://' . $_SERVER['HTTP_HOST']. '/login'; ?>" method="post" >
+                    <label class="block text-sm" for="email">
+                      <span class="text-gray-700 dark:text-gray-400">E-mail</span>
+                    </label>
+                    <input
+                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                      name="email"
+                      type="email"
+                      id="email"
+                      placeholder="bruna@utfpr.com"
+                    />
 
-                  <label class="block mt-4 text-sm">
-                    <span class="text-gray-700 dark:text-gray-400">Senha</span>
-                  </label>
-                  <input
-                    class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
-                    placeholder="***************"
-                    type="password"
-                  />
-    
-                  <button
-                    type="submit"
-                    class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                  >
-                    Entrar
-                  </button>
+                    <label class="block mt-4 text-sm" for="password">
+                      <span class="text-gray-700 dark:text-gray-400">Senha</span>
+                    </label>
+                    <input
+                      class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                      placeholder="***************"
+                      type="password"
+                      name="password"
+                      id="password"
+                    />
+      
+                    <input
+                      type="submit"
+                      value="Entrar"
+                      class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                    >
+                  </form>
     
                   <hr class="my-8" />
     
