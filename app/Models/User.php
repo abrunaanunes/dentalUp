@@ -7,8 +7,9 @@ use database\Connection;
 class User
 {
     private $name;
-    private $username;
+    private $email;
     private $password;
+    private $is_active;
     private $db;
 
     //Setters
@@ -32,6 +33,11 @@ class User
         $this->password = $string;
     }
 
+    public function setIsActive($boolean)
+    {
+        $this->is_active = $boolean;
+    }
+
     //Getters
     public function getName()
     {
@@ -48,10 +54,15 @@ class User
         return $this->password;
     }
 
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
     //Include
     public function setUser()
     {
-        return $this->db->insertUser($this->getName(), $this->getEmail(), $this->getPassword());
+        return $this->db->insertUser($this->getName(), $this->getEmail(), $this->getPassword(), $this->getIsActive());
     }
 
     public function findUserByEmail($email) 
