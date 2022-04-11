@@ -1,21 +1,23 @@
 <?php
-namespace app\Controllers\Front;
+
+namespace app\Controllers;
 
 use app\Controllers\Controller;
 use app\Helpers\Render;
 
-class FrontController implements Controller
+class DashboardController implements Controller
 {
+
     use Render;
     
     public function index()
     {
-        return $this->RenderHtml('index', []);
+        return $this->RenderHtml('dashboard.php', []);
     }
 
     public function create()
     {
-
+        return $this->RenderHtml('register.php', []);
     }
 
     public function store()
@@ -30,21 +32,11 @@ class FrontController implements Controller
 
     public function update($request, $id)
     {
-
+    
     }
 
     public function destroy($id)
     {
 
-    }
-
-    public function login()
-    {
-        return $this->RenderHtml('login', []);
-    }
-
-    public function register()
-    {
-        return $this->RenderHtml('register', []);
     }
 }

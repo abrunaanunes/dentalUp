@@ -17,5 +17,4 @@ interface Controller
 
     public function destroy($id);
 
-    public function RenderHtml(string $view, array $data);
 }
