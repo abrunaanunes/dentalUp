@@ -4,6 +4,7 @@ namespace app\Controllers;
 use app\Helpers\Render;
 use app\Helpers\Session;
 use app\Models\User;
+use Pecee\SimpleRouter\SimpleRouter;
 
 class FrontController
 {
@@ -19,7 +20,10 @@ class FrontController
     
     public function index()
     {
-        
+        if($this->isLoggedIn()) {
+            return $this->RenderHtml('dashboard.php', []);
+        }
+
         return $this->RenderHtml('login.php', []);
     }
 
@@ -54,18 +58,26 @@ class FrontController
 
         $loggedInUser = false;
 
-        if(!empty($errors)) {
-            return $this->RenderHtml('login.php', $errors);
+        if(!empty($errors['emailError']) || !empty($errors['passwordError'])) {
+                return $this->RenderHtml('login.php', $errors);
         } else {
-            $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+            $loggedInUser = $this->userModel->loginUser($data['email'], $data['password']);
         }
 
         if($loggedInUser) {
-            $this->createUserSession($loggedInUser);
-            header('location:' . $_SERVER['HTTP_HOST'] . '/dashboard');
+            $this->createUserSession($data['email']);
+            SimpleRouter::response()->redirect('/dashboard');
         } else {
             $errors['loginError'] = "E-mail ou senha incorretos. Por favor, tente novamente.";
             return $this->RenderHtml('login.php', $errors);
+        }
+    }
+
+    public function logout()
+    {
+        $loggedOutUser = $this->logoutSession();
+        if($loggedOutUser) {
+            SimpleRouter::response()->redirect('/');
         }
     }
 }

@@ -11,7 +11,7 @@
 </head>
 <body>
         <div class="buttons">
-            <button class="button">Deslogar</button>
+            <a href="/logout" class="button">Deslogar</a>
             <button class="button">Perfil</button>
         </div>
         <div class="container">

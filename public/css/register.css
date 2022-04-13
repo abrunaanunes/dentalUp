@@ -18,7 +18,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     width: 960px;
-    height: 50%;
+    height: 70vh;
     justify-content: space-between;
     align-items: center;
     position: relative;
@@ -62,13 +62,14 @@ body {
     text-transform: uppercase;
     color: #fff;
     font-size: 10px;
-    padding: 10px 50px;
+    height: 35px;
     cursor: pointer;
     font-weight: bold;
     width: 150px;
     align-self: center;
     border: none;
     margin-top: 1rem;
+    white-space: nowrap;
 }
 .btn-primary {
     background-color: transparent;

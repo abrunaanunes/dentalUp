@@ -3,6 +3,7 @@
 namespace app\Models;
 
 use database\Connection;
+use mysqli;
 
 class User
 {
@@ -75,18 +76,18 @@ class User
         }
     }
 
-    public function login($email, $password) 
+    public function loginUser($email, $password)
     {
-        $sql = $this->mysql->prepare("SELECT * FROM users WHERE email = :email");
-        $sql->bind(':email', $email);
-        $row = $sql->single();
-
+        $row = mysqli_query($this->db->mysql, "SELECT * FROM users WHERE email = '" . $email . "'");
+        $row = mysqli_fetch_object($row);
+        
         $hashedPassword = $row->password;
 
-        if (password_verify($password, $hashedPassword)) {
-            return true;
+        if ($password != $hashedPassword) {
+            return false;
         } 
 
-        return false;
+        return true;
+
     }
 }

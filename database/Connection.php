@@ -20,6 +20,7 @@ class Connection {
     public function connect()
     {
         $this->mysql = new mysqli(DB_HOST, DB_USER , DB_PASS, DB_NAME);
+        $this->mysql->set_charset("utf8");
         if ($this->mysql->connect_error) {
             die("Connection failed: " . $this->mysql->connect_error);
         }

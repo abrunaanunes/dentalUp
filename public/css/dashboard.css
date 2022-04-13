@@ -40,7 +40,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     width: 960px;
-    height: 50%;
+    height: 20vh;
     align-items: center;
     position: relative;
 }
@@ -54,7 +54,7 @@ body {
 .card {
     margin: 1rem;
     width: 12.5rem;
-    height: 18.75rem;
+    height: 100px;
     border-radius: 0.5rem;
     border: none;
     background: #58af9b;

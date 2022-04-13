@@ -6,6 +6,7 @@ SimpleRouter::group([
 ],function () {
     SimpleRouter::get('/', 'FrontController@index');
     SimpleRouter::post('/login', 'FrontController@login');
+    SimpleRouter::get('/logout', 'FrontController@logout');
     SimpleRouter::get('/register', 'FrontController@register');
     SimpleRouter::get('/dashboard', 'DashboardController@index');
 });
