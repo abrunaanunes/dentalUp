@@ -46,6 +46,8 @@ auxiliar no desenvolvimento através da instalação do projeto em demais máqui
 
 ## Tecnologias utilizadas no proejto
 - PHP
+- MySQL
+- Workbench
 - Simple Router (biblioteca)
 - Composer
 - HTML
