@@ -33,7 +33,7 @@ Responsável por desenvolver o front-end incluindo formulários de login, cadast
 O principal objetivo foi criar telas com design clean para facilitar a visualização e entendimento
 do usuário, promovendo desta forma uma iteração humano computador que resultasse em uma boa experiência
 para o usuário.
-As principais tecnologias utilizadas foram HTML e CSS.
+As principais tecnologias utilizadas foram HTML, CSS e Tailwind.
 
 #### Bruna Nunes (RA: 2328585) 
 Responsável por desenvolver o back-end onde foram feitas validações, autênticação com sessões,
@@ -52,3 +52,4 @@ auxiliar no desenvolvimento através da instalação do projeto em demais máqui
 - Composer
 - HTML
 - CSS
+- Tailwind

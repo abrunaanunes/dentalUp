@@ -34,7 +34,7 @@
 
                             <a class="inline-flex items-center px-1 pt-1 border-b-3 border-transparent text-sm font-medium leading-5 text-white focus:outline-none focus:text-w6-700 focus:border-white transition" href="#"> Agenda </a>
 
-                            <a class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-emerald-900 hover:text-w6-800 focus:outline-none transition" href="/logout"> Sair </a>
+                            <a class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-w6-800 focus:outline-none transition" href="/logout" style="background-color: #107a91"> Sair </a>
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <div>
                             <div class="p-6 pb-20 bg-emerald-600 border-b border-gray-200">
-                                <div class="mt-3 text-2xl text-white"> Bem vindo ao painel de administração do seu consultório </div>
+                                <div class="mt-3 text-2xl text-white"> Bem-vindo ao painel de administração do seu consultório </div>
                             </div>
                             <div class="flex justify-between relative -my-12 px-8 mb-8">
                                 <div class="w-full mx-4 flex flex-col items-center gap-3 p-5 shadow-lg bg-gray-100 border-4 border-white rounded-lg"><span class="text-gray-400 text-sm">Consultas</span><span class="text-3xl text-gray-500">20</span></div>
