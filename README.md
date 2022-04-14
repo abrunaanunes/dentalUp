@@ -39,3 +39,10 @@ As prinicipais tecnologias utilizadas foram PHP, MySQL, Workbench e, além desta
 #### Leodocir Neto (RA: 2257122)
 Responsável por criar as regras de negócio, redigir a documentação e 
 auxiliar no desenvolvimento através da instalação do projeto em demais máquinas para fins de teste.
+
+## Tecnologias utilizadas no proejto
+- PHP
+- Simple Router (biblioteca)
+- Composer
+- HTML
+- CSS
