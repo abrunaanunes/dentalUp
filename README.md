@@ -1,15 +1,15 @@
 # DentalUp
 
 ## Pré Requisitos
-- Download PHP 7.4.28;
-- Download composer and install;
-- Altera informações da configuração do banco no arquivo config.php localizado na pasta config na raiz do diretório.
-- Mudar as configurações do Apache no Xampp - em C:\xampp>\apache\conf nome do arquivo: httpd.conf - 
-#LoadModule rewrite_module modules/mod_rewrite.so para 
-LoadModule rewrite_module modules/mod_rewrite.so e 
-AllowOverride None para AllowOverride All;
+- Instalar e configurar o ambiente com Xampp
+- Instalar Composer de forma global
 - Iniciar o Xampp junto iniciando o Apache e o MySQL;
-- Testar o site pela url - http://localhost/web-servidor-dev;
+- Fazer o download do projeto no repositório
+- Executar o composer install na pasta do projeto
+- Altera informações da configuração do banco no arquivo config.php localizado na pasta config na raiz do diretório.
+- Caso as urls amigáveis estejam configuradas no Apache, o projeto pode ser acessado no navegador por localhost/nome_to_projeto
+- Caso contrário, abrir a pasta no terminal e executar o PHP -s localhost:8080
+- Acessar o projeto pelo navegador no link localhost:8080
 
 ## Sobre o sistema
 O sistema DentalUp é uma proposta de gerenciamento de consultas, clientes e cirurgiões-dentistas para consultórios.
@@ -24,7 +24,7 @@ autênticação de sessões e o uso do banco de dados.
 
 ## Partes desenvolvidas por cada integrante:
 
-#### Maria Eduarda Freitas (RA: 2328585)
+#### Maria Eduarda Freitas (RA: 2317559)
 Responsável por desenvolver o front-end incluindo formulários de login, cadastro e tela dashboard.
 O principal objetivo foi criar telas com design clean para facilitar a visualização e entendimento
 do usuário, promovendo desta forma uma iteração humano computador que resultasse em uma boa experiência
