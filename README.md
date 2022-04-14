@@ -8,8 +8,11 @@ ministrada pelo professor Diego Roberto Antunes na Universidade Tecnológica Fed
 - Instalar e configurar o ambiente com Xampp
 - Instalar Composer de forma global
 - Iniciar o Xampp junto iniciando o Apache e o MySQL;
+
+## Instalação
 - Fazer o download do projeto no repositório
 - Executar o composer install na pasta do projeto
+- Criar um banco de dados
 - Altera informações da configuração do banco no arquivo config.php localizado na pasta config na raiz do diretório.
 - Caso as urls amigáveis estejam configuradas no Apache, o projeto pode ser acessado no navegador por localhost/nome_to_projeto
 - Caso contrário, abrir a pasta no terminal e executar o PHP -s localhost:8080
