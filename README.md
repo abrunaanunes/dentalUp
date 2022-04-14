@@ -1,5 +1,9 @@
 # DentalUp
 
+## Atenção!
+Este projeto foi desenvolvido para fins de avaliação para a disciplina de Desenvolvimento Web Servidor
+ministrada pelo professor Diego Roberto Antunes na Universidade Tecnológica Federal do Paraná - Campi Ponta Grossa
+
 ## Pré Requisitos
 - Instalar e configurar o ambiente com Xampp
 - Instalar Composer de forma global
