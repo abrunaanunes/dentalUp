@@ -24,18 +24,18 @@ autênticação de sessões e o uso do banco de dados.
 
 ## Partes desenvolvidas por cada integrante:
 
-### Maria Eduarda Freitas (RA: 2328585)
+#### Maria Eduarda Freitas (RA: 2328585)
 Responsável por desenvolver o front-end incluindo formulários de login, cadastro e tela dashboard.
 O principal objetivo foi criar telas com design clean para facilitar a visualização e entendimento
 do usuário, promovendo desta forma uma iteração humano computador que resultasse em uma boa experiência
 para o usuário.
 As principais tecnologias utilizadas foram HTML e CSS.
 
-### Bruna Nunes (RA: 2328585) 
+#### Bruna Nunes (RA: 2328585) 
 Responsável por desenvolver o back-end onde foram feitas validações, autênticação com sessões,
 cadastro e inclusão de dados no banco.
 As prinicipais tecnologias utilizadas foram PHP, MySQL, Workbench e, além destas, a arquitetura MVC.
 
-### Leodocir Neto (RA: 2257122)
+#### Leodocir Neto (RA: 2257122)
 Responsável por criar as regras de negócio, redigir a documentação e 
 auxiliar no desenvolvimento através da instalação do projeto em demais máquinas para fins de teste.
