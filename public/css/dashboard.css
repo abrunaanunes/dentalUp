@@ -17,6 +17,26 @@ body {
     height: 100vh;   
 }
 
+.navbar {
+    background-color: #045b6e;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.nav_logo img {
+    width: 170px;
+}
+
+.nav_links_ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
 .buttons {
     display: flex;
     place-self: flex-end;
@@ -24,13 +44,19 @@ body {
 }
 
 .button {
-    width: 70px;
-    height: 30px;
+    width: 80px;
+    height: 35px;
     border-radius: 0.5rem;
     border: none;
     background: #58af9b;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 0.5rem;
 }
 
