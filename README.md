@@ -31,7 +31,7 @@ do usuário, promovendo desta forma uma iteração humano computador que resulta
 para o usuário.
 As principais tecnologias utilizadas foram HTML e CSS.
 
-### Bruna Nunes (RA: ) 
+### Bruna Nunes (RA: 2328585) 
 Responsável por desenvolver o back-end onde foram feitas validações, autênticação com sessões,
 cadastro e inclusão de dados no banco.
 As prinicipais tecnologias utilizadas foram PHP, MySQL, Workbench e, além destas, a arquitetura MVC.
