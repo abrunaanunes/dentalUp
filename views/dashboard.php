@@ -34,7 +34,7 @@
 
                             <a class="inline-flex items-center px-1 pt-1 border-b-3 border-transparent text-sm font-medium leading-5 text-white focus:outline-none focus:text-w6-700 focus:border-white transition" href="#"> Agenda </a>
 
-                            <a class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-w6-800 focus:outline-none transition" href="/logout" style="background-color: #107a91"> Sair </a>
+                            <a class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white hover:text-w6-800 focus:outline-none transition" href="/logout" style="background-color: #33967f"> Sair </a>
                         </div>
                     </div>
                 </div>
