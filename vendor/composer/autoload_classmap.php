@@ -17,4 +17,5 @@ return array(
     'app\\Models\\Product' => $baseDir . '/app/Models/Model.php',
     'app\\Models\\User' => $baseDir . '/app/Models/User.php',
     'database\\Connection' => $baseDir . '/database/Connection.php',
+    'database\\Database' => $baseDir . '/database/Database.php',
 );

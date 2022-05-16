@@ -2,8 +2,7 @@
 
 namespace app\Models;
 
-use database\Connection;
-use mysqli;
+use database\Database;
 
 class User
 {
@@ -17,7 +16,7 @@ class User
 
     public function __construct()
     {
-        $this->db = new Connection();
+        $this->db = new Database();
     }
     public function setName($string)
     {
@@ -63,7 +62,7 @@ class User
     //Include
     public function setUser()
     {
-        return $this->db->insertUser($this->getName(), $this->getEmail(), $this->getPassword(), $this->getIsActive());
+        // return $this->db->insertUser($this->getName(), $this->getEmail(), $this->getPassword(), $this->getIsActive());
     }
 
     public function findUserByEmail($email) 
