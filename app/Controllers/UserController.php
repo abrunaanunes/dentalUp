@@ -71,7 +71,7 @@ class UserController implements Controller
             return $this->RenderHtml('register.php', $errors);
         } else {
             //Hash password
-            $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+            // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
             
             $this->userModel->setName($data['name']);
             $this->userModel->setEmail($data['email']);

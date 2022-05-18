@@ -56,37 +56,46 @@ class User
 
     public function getIsActive()
     {
-        return $this->is_active;
+        return true;
     }
 
     //Include
     public function setUser()
     {
-        // return $this->db->insertUser($this->getName(), $this->getEmail(), $this->getPassword(), $this->getIsActive());
+        $this->db->query('INSERT INTO users (`name`, `email`, `password`, `is_active`) VALUES (:name, :email, :password, :is_active)');
+
+        $this->db->bind(':name', $this->getName());
+        $this->db->bind(':email', $this->getEmail());
+        $this->db->bind(':password', $this->getPassword());
+        $this->db->bind(':is_active', $this->getIsActive());
+
+        if($this->db->execute()) {
+            return true;
+        } 
+        return false;
     }
 
     public function findUserByEmail($email) 
     {
-        $select = mysqli_query($this->db->mysql, "SELECT * FROM users WHERE email = '" . $email . "'");
-        if(mysqli_num_rows($select)) {
+        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->bind(':email', $email);
+        if($this->db->rowCount() > 0) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 
     public function loginUser($email, $password)
     {
-        $row = mysqli_query($this->db->mysql, "SELECT * FROM users WHERE email = '" . $email . "'");
-        $row = mysqli_fetch_object($row);
+        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->bind(':email', $email);
+        $row = $this->db->single();
+
+        if($password == $row->password) {
+            return $row;
+        }
         
-        $hashedPassword = $row->password;
-
-        if ($password != $hashedPassword) {
-            return false;
-        } 
-
-        return true;
-
+        return false;
     }
 }
