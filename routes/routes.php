@@ -21,6 +21,26 @@ SimpleRouter::group([
         SimpleRouter::get('/destroy', 'UserController@destroy');
 });
 
+SimpleRouter::group([
+    'prefix' => 'appointment'
+],function () {
+    SimpleRouter::get('/create', 'AppointmentController@create');
+    SimpleRouter::post('/store', 'AppointmentController@store');
+    SimpleRouter::get('/edit', 'AppointmentController@edit');
+    SimpleRouter::get('/update', 'AppointmentController@update');
+    SimpleRouter::get('/destroy', 'AppointmentController@destroy');
+});
+
+SimpleRouter::group([
+    'prefix' => 'client'
+],function () {
+    SimpleRouter::get('/create', 'ClientController@create');
+    SimpleRouter::post('/store', 'ClientController@store');
+    SimpleRouter::get('/edit', 'ClientController@edit');
+    SimpleRouter::get('/update', 'ClientController@update');
+    SimpleRouter::get('/destroy', 'ClientController@destroy');
+});
+
 // SimpleRouter::error(function(Request $request, \Exception $exception) {
 
 //     switch($exception->getCode()) {

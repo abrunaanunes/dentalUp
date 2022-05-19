@@ -29,6 +29,10 @@ class Database {
     {
         $this->connect();
         $this->createUsersTable();
+        $this->createClientsTable();
+        $this->createClientsTable();
+        $this->createDentistsTable();
+        $this->creatAppointmentTable();
 
     }
 
@@ -64,6 +68,42 @@ class Database {
         }
     }
 
+    private function createClientsTable()
+    {
+        $sql =  "CREATE TABLE IF NOT EXISTS clients(
+            `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            `name` VARCHAR(80) NOT NULL,
+            `email` VARCHAR(70) NOT NULL UNIQUE,
+            `cpf` VARCHAR(14) NOT NULL,
+            `phone` VARCHAR(14),
+            `is_active` BOOLEAN
+        )";
+
+        try {
+            $this->dbHandler->exec($sql);
+        } catch(PDOException $e) {
+            echo $e->getMessage(); //Remove or change message in production code
+        }
+    }
+
+    private function createDentistsTable()
+    {
+        $sql =  "CREATE TABLE IF NOT EXISTS dentists(
+            `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+            `name` VARCHAR(80) NOT NULL,
+            `email` VARCHAR(70) NOT NULL UNIQUE,
+            `cpf` VARCHAR(14) NOT NULL,
+            `phone` VARCHAR(14),
+            `is_active` BOOLEAN
+        )";
+
+        try {
+            $this->dbHandler->exec($sql);
+        } catch(PDOException $e) {
+            echo $e->getMessage(); //Remove or change message in production code
+        }
+    }
+
     public function creatAppointmentTable()
     {
         $sql = "CREATE TABLE IF NOT EXISTS appointments(
@@ -71,10 +111,12 @@ class Database {
             `appointment_date` TIMESTAMP NOT NULL,
             `appointment_reason` VARCHAR(250) NOT NULL,
             `user_id` INTEGER NOT NULL,
-            `client_name` VARCHAR(80) NOT NULL,
-            `client_cpf` VARCHAR(14) NOT NULL,
+            `client_id` INTEGER NOT NULL,
+            `dentist_id` INTEGER NOT NULL,
             `created_at` TIMESTAMP NOT NULL,
-            FOREIGN KEY (user_id) REFERENCES users(id)
+            FOREIGN KEY (user_id) REFERENCES users(id),
+            FOREIGN KEY (client_id) REFERENCES clients(id),
+            FOREIGN KEY (dentist_id) REFERENCES dentists(id)
         )";
 
         try {
