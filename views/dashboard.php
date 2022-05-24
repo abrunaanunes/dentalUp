@@ -11,7 +11,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div>
                     <div class="p-6 pb-20 bg-emerald-600 border-b border-gray-200">
-                        <div class="mt-3 text-2xl text-white"> Bem-vindo ao painel de administração do seu consultório </div>
+                        <div class="mt-3 text-2xl text-white"> Bem-vindo ao painel de administração do consultório </div>
                     </div>
                     <div class="flex justify-between relative -my-12 px-8 mb-8">
                         <div class="w-full mx-4 flex flex-col items-center gap-3 p-5 shadow-lg bg-gray-100 border-4 border-white rounded-lg"><span class="text-gray-400 text-sm">Consultas</span><span class="text-3xl text-gray-500"><?php echo $appointments; ?></span></div>

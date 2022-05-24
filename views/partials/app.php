@@ -45,6 +45,7 @@
                 background-color: #58af9b !important;
             }
         </style>
+        <script src="../../public/js/app.js"></script>
         <script src="https://kit.fontawesome.com/63b2114156.js" crossorigin="anonymous"></script>
     </body>
 </html>

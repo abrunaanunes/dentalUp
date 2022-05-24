@@ -13,7 +13,7 @@ interface Controller
 
     public function edit($id);
 
-    public function update($request, $id);
+    public function update($id);
 
     public function destroy($id);
 

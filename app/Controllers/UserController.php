@@ -96,7 +96,7 @@ class UserController implements Controller
 
     }
 
-    public function update($request, $id)
+    public function update($id)
     {
     
     }
