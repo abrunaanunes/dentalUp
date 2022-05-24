@@ -47,15 +47,15 @@ class ClientController implements Controller
         ];
 
         if($data['name'] == "" || empty($data['name'])) {
-            $errors['nameError'] = "O campo nome encontra-se vazio.";
+            $data['nameError'] = "O campo nome encontra-se vazio.";
         }
 
         if(empty($data['email'])) {
-            $errors['emailError'] = "O campo e-mail encontra-se vazio.";
+            $data['emailError'] = "O campo e-mail encontra-se vazio.";
         } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-            $errors['emailError'] = "E-mail inválido.";
+            $data['emailError'] = "E-mail inválido.";
         } elseif ($this->clientModel->findClientByEmail($data['email'])) {
-            $errors['emailError'] = "E-mail já cadastrado.";
+            $data['emailError'] = "E-mail já cadastrado.";
         }
 
         try {
@@ -65,12 +65,12 @@ class ClientController implements Controller
             $this->clientModel->setPhone($data['phone']);
             $this->clientModel->setIsActive(1);
 
-            $this->clientModel->setDentist();
+            $this->clientModel->setClient();
             SimpleRouter::response()->redirect('/client');
 
         } catch (\Throwable $th) {
-            $errors['registerError'] = $th->getMessage();
-            return $this->RenderHtml('client/form.php', $errors);
+            $data['registerError'] = $th->getMessage();
+            return $this->RenderHtml('client/form.php', $data);
         }
     }
 
@@ -78,18 +78,67 @@ class ClientController implements Controller
     {
         $this->db->query('SELECT * FROM clients WHERE id = :id');
         $this->db->bind(':id', $id);
-        $item = $this->db->single();
+        $data = (array) $this->db->single();
 
-        return $this->renderHtml('client/form.php', []);
+        return $this->renderHtml('client/form.php', $data);
     }
 
-    public function update($request, $id)
+    public function update($id)
     {
-    
+        $data = [
+            'name' => trim($_POST['name']),
+            'email' => trim($_POST['email']),
+            'cpf' => trim($_POST['cpf']),
+            'phone' => trim($_POST['phone'])
+        ];
+
+        $this->db->query('SELECT * FROM clients WHERE id = :id');
+        $this->db->bind(':id', $id);
+        $item = new Client($this->db->single());
+
+
+
+        if($data['name'] == "" || empty($data['name'])) {
+            $data['nameError'] = "O campo nome encontra-se vazio.";
+        }
+
+        if(empty($data['email'])) {
+            $data['emailError'] = "O campo e-mail encontra-se vazio.";
+        } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            $data['emailError'] = "E-mail inválido.";
+        } elseif ($item->findClientByEmail($data['email'])) {
+            $data['emailError'] = "E-mail já cadastrado.";
+        }
+
+        try {
+            $item->setName($data['name']);
+            $item->setEmail($data['email']);
+            $item->setCpf($data['cpf']);
+            $item->setPhone($data['phone']);
+
+            $item->updateClient($id);
+            SimpleRouter::response()->redirect('/client');
+
+        } catch (\Throwable $th) {
+            $this->db->query('SELECT * FROM clients WHERE id = :id');
+            $this->db->bind(':id', $id);
+            $data = (array) $this->db->single();
+
+            $data['registerError'] = $th->getMessage();
+            return $this->RenderHtml('client/form.php', $data);
+        }
     }
 
     public function destroy($id)
     {
-
+        try {
+            $this->db->query('DELETE FROM clients WHERE id = :id');
+            $this->db->bind(':id', $id);
+            $this->db->execute();
+            SimpleRouter::response()->redirect('/client');
+        } catch (\Throwable $th) {
+            $data['registerError'] = $th->getMessage();
+            var_dump($data);
+        }
     }
 }

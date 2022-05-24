@@ -42,7 +42,7 @@
                                                     <a href="/client/edit/<?php echo $client->id; ?>" class="inline-flex items-center px-4 py-2 bg-gray-300 rounded-md font-semibold text-xs text-gray-500 uppercase tracking-widest hover:bg-gray-400 active:bg-gray-500 focus:outline-none focus:border-gray-500 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="Alterar" href="#">
                                                         Editar
                                                     </a>
-                                                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:ring disabled:opacity-25 transition focus:outline-none bg-gray-300 text-gray-400 hover:bg-gray-400 hover:text-gray-500 active:bg-gray-400 active:text-white focus:border-gray-500 focus:ring-gray-500" title="Mover para lixeira">
+                                                    <button type="button" onclick="deleteConfirm('/client/destroy/<?php echo $client->id; ?>')" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:ring disabled:opacity-25 transition focus:outline-none bg-gray-300 text-gray-400 hover:bg-gray-400 hover:text-gray-500 active:bg-gray-400 active:text-white focus:border-gray-500 focus:ring-gray-500" title="Mover para lixeira">
                                                         Excluir
                                                     </button>
                                                 </td>
