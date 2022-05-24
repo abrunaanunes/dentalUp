@@ -6,6 +6,7 @@ use app\Controllers\Controller;
 use app\Helpers\Render;
 use app\Helpers\Session;
 use app\Models\User;
+use Pecee\SimpleRouter\SimpleRouter;
 
 class UserController implements Controller
 {
@@ -71,7 +72,7 @@ class UserController implements Controller
             return $this->RenderHtml('register.php', $errors);
         } else {
             //Hash password
-            // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+            $data['password'] = md5($data['password']);
             
             $this->userModel->setName($data['name']);
             $this->userModel->setEmail($data['email']);
@@ -79,10 +80,9 @@ class UserController implements Controller
             $this->userModel->setIsActive(1);
             
             if($this->userModel->setUser()) {
-                $loggedInUser = $this->createUserSession($this->userModel);
+                $loggedInUser = $this->createUserSession($this->userModel->getEmail());
                 if($loggedInUser) {
-                    header('location:' . $_SERVER['HTTP_HOST'] . '/dashboard');
-                    exit;
+                    SimpleRouter::response()->redirect('/client');
                 }
             } else {
                 $errors['registerError'] = "Erro ao cadastrar usuário.";

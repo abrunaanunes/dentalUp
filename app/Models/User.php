@@ -92,7 +92,7 @@ class User
         $this->db->bind(':email', $email);
         $row = $this->db->single();
 
-        if($row && $password == $row->password) {
+        if($row && md5($password) == $row->password) {
             return true;
         }
         

@@ -56,7 +56,7 @@ class Database {
         $sql =  "CREATE TABLE IF NOT EXISTS users(
             `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
             `name` VARCHAR(30) NOT NULL,
-            `password` VARCHAR(30) NOT NULL,
+            `password` VARCHAR(250) NOT NULL,
             `email` VARCHAR(70) NOT NULL UNIQUE,
             `is_active` BOOLEAN
         )";
