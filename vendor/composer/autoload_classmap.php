@@ -7,15 +7,20 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'app\\Controllers\\AppointmentController' => $baseDir . '/app/Controllers/AppointmentController.php',
+    'app\\Controllers\\ClientController' => $baseDir . '/app/Controllers/ClientController.php',
     'app\\Controllers\\Controller' => $baseDir . '/app/Controllers/Controller.php',
     'app\\Controllers\\DashboardController' => $baseDir . '/app/Controllers/DashboardController.php',
+    'app\\Controllers\\DentistController' => $baseDir . '/app/Controllers/DentistController.php',
     'app\\Controllers\\FrontController' => $baseDir . '/app/Controllers/FrontController.php',
     'app\\Controllers\\UserController' => $baseDir . '/app/Controllers/UserController.php',
     'app\\Helpers\\Render' => $baseDir . '/app/Helpers/Render.php',
     'app\\Helpers\\Request' => $baseDir . '/app/Helpers/Request.php',
     'app\\Helpers\\Session' => $baseDir . '/app/Helpers/Session.php',
+    'app\\Models\\Appointment' => $baseDir . '/app/Models/Appointment.php',
+    'app\\Models\\Client' => $baseDir . '/app/Models/Client.php',
+    'app\\Models\\Dentist' => $baseDir . '/app/Models/Dentist.php',
     'app\\Models\\Product' => $baseDir . '/app/Models/Model.php',
     'app\\Models\\User' => $baseDir . '/app/Models/User.php',
-    'database\\Connection' => $baseDir . '/database/Connection.php',
     'database\\Database' => $baseDir . '/database/Database.php',
 );

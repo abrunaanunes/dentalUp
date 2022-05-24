@@ -43,16 +43,21 @@ class ComposerStaticInit249d8b721e7d893cfabbb218159852c6
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'app\\Controllers\\AppointmentController' => __DIR__ . '/../..' . '/app/Controllers/AppointmentController.php',
+        'app\\Controllers\\ClientController' => __DIR__ . '/../..' . '/app/Controllers/ClientController.php',
         'app\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Controllers/Controller.php',
         'app\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Controllers/DashboardController.php',
+        'app\\Controllers\\DentistController' => __DIR__ . '/../..' . '/app/Controllers/DentistController.php',
         'app\\Controllers\\FrontController' => __DIR__ . '/../..' . '/app/Controllers/FrontController.php',
         'app\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Controllers/UserController.php',
         'app\\Helpers\\Render' => __DIR__ . '/../..' . '/app/Helpers/Render.php',
         'app\\Helpers\\Request' => __DIR__ . '/../..' . '/app/Helpers/Request.php',
         'app\\Helpers\\Session' => __DIR__ . '/../..' . '/app/Helpers/Session.php',
+        'app\\Models\\Appointment' => __DIR__ . '/../..' . '/app/Models/Appointment.php',
+        'app\\Models\\Client' => __DIR__ . '/../..' . '/app/Models/Client.php',
+        'app\\Models\\Dentist' => __DIR__ . '/../..' . '/app/Models/Dentist.php',
         'app\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Model.php',
         'app\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-        'database\\Connection' => __DIR__ . '/../..' . '/database/Connection.php',
         'database\\Database' => __DIR__ . '/../..' . '/database/Database.php',
     );
 

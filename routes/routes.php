@@ -24,6 +24,7 @@ SimpleRouter::group([
 SimpleRouter::group([
     'prefix' => 'appointment'
 ],function () {
+    SimpleRouter::get('/', 'AppointmentController@index');
     SimpleRouter::get('/create', 'AppointmentController@create');
     SimpleRouter::post('/store', 'AppointmentController@store');
     SimpleRouter::get('/edit', 'AppointmentController@edit');
@@ -34,11 +35,23 @@ SimpleRouter::group([
 SimpleRouter::group([
     'prefix' => 'client'
 ],function () {
+    SimpleRouter::get('/', 'ClientController@index');
     SimpleRouter::get('/create', 'ClientController@create');
     SimpleRouter::post('/store', 'ClientController@store');
-    SimpleRouter::get('/edit', 'ClientController@edit');
+    SimpleRouter::get('/edit/{id}', 'ClientController@edit');
     SimpleRouter::get('/update', 'ClientController@update');
     SimpleRouter::get('/destroy', 'ClientController@destroy');
+});
+
+SimpleRouter::group([
+    'prefix' => 'dentist'
+],function () {
+    SimpleRouter::get('/', 'DentistController@index');
+    SimpleRouter::get('/create', 'DentistController@create');
+    SimpleRouter::post('/store', 'DentistController@store');
+    SimpleRouter::get('/edit', 'DentistController@edit');
+    SimpleRouter::get('/update', 'DentistController@update');
+    SimpleRouter::get('/destroy', 'DentistController@destroy');
 });
 
 // SimpleRouter::error(function(Request $request, \Exception $exception) {
