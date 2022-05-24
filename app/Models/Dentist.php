@@ -87,6 +87,22 @@ class Dentist
         return false;
     }
 
+    public function updateDentist($id)
+    {
+        $this->db->query('UPDATE dentists SET `name`=:name, `email`=:email, `cpf`=:cpf, `phone`=:phone WHERE `id`=:id)');
+
+        $this->db->bind(':name', $this->getName());
+        $this->db->bind(':email', $this->getEmail());
+        $this->db->bind(':cpf', $this->getCpf());
+        $this->db->bind(':phone', $this->getPhone());
+        $this->db->bind(':id', $id);
+
+        if($this->db->execute()) {
+            return true;
+        } 
+        return false;
+    }
+
     public function findDentistByEmail($email) 
     {
         $this->db->query('SELECT * FROM dentists WHERE email = :email');

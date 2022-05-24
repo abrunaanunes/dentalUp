@@ -39,10 +39,10 @@
                                                 </td>
 
                                                 <td class="px-6 py-4 flex justify-end gap-1">
-                                                    <a class="inline-flex items-center px-4 py-2 bg-gray-300 rounded-md font-semibold text-xs text-gray-500 uppercase tracking-widest hover:bg-gray-400 active:bg-gray-500 focus:outline-none focus:border-gray-500 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="Alterar" href="#">
+                                                    <a href="/dentist/edit/<?php echo $dentist->id; ?>" class="inline-flex items-center px-4 py-2 bg-gray-300 rounded-md font-semibold text-xs text-gray-500 uppercase tracking-widest hover:bg-gray-400 active:bg-gray-500 focus:outline-none focus:border-gray-500 focus:ring focus:ring-gray-300 disabled:opacity-25 transition" title="Alterar" href="#">
                                                         Editar
                                                     </a>
-                                                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:ring disabled:opacity-25 transition focus:outline-none bg-gray-300 text-gray-400 hover:bg-gray-400 hover:text-gray-500 active:bg-gray-400 active:text-white focus:border-gray-500 focus:ring-gray-500" title="Mover para lixeira">
+                                                    <button type="button" onclick="deleteConfirm('/dentist/destroy/<?php echo $dentist->id; ?>')" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:ring disabled:opacity-25 transition focus:outline-none bg-gray-300 text-gray-400 hover:bg-gray-400 hover:text-gray-500 active:bg-gray-400 active:text-white focus:border-gray-500 focus:ring-gray-500" title="Mover para lixeira">
                                                         Excluir
                                                     </button>
                                                 </td>
