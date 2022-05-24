@@ -68,24 +68,36 @@ class AppointmentController implements Controller
             SimpleRouter::response()->redirect('/appointment');
 
         } catch (\Throwable $th) {
-            $errors['registerError'] = $th->getMessage();
-            return $this->RenderHtml('appointment/form.php', $errors, []);
+            $data['registerError'] = $th->getMessage();
+            return $this->RenderHtml('appointment/form.php', $data);
         }
 
     }
 
     public function edit($id)
     {
+        $this->db->query('SELECT * FROM appointments WHERE id = :id');
+        $this->db->bind(':id', $id);
+        $data = (array) $this->db->single();
 
+        return $this->renderHtml('appointment/form.php', $data);
     }
 
-    public function update($request, $id)
+    public function update($id)
     {
     
     }
 
     public function destroy($id)
     {
-
+        try {
+            $this->db->query('DELETE FROM appointments WHERE id = :id');
+            $this->db->bind(':id', $id);
+            $this->db->execute();
+            SimpleRouter::response()->redirect('/appointment');
+        } catch (\Throwable $th) {
+            $data['registerError'] = $th->getMessage();
+            var_dump($data);
+        }
     }
 }

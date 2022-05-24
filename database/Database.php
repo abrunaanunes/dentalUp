@@ -114,9 +114,9 @@ class Database {
             `client_id` INTEGER NOT NULL,
             `dentist_id` INTEGER NOT NULL,
             `created_at` TIMESTAMP NOT NULL,
-            FOREIGN KEY (user_id) REFERENCES users(id),
-            FOREIGN KEY (client_id) REFERENCES clients(id),
-            FOREIGN KEY (dentist_id) REFERENCES dentists(id)
+            FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+            FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE CASCADE,
+            FOREIGN KEY (dentist_id) REFERENCES dentists(id) ON DELETE CASCADE
         )";
 
         try {

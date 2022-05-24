@@ -1,11 +1,16 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/' .'views' . '/partials/app.php'  ?>
+<header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-xl text-gray-400 leading-tight"><?php if(empty($data['id'])) { echo "Cadastrar consulta"; } else { echo "Editar consulta"; } ?></h2>
+    </div>
+</header>
 <main>
     <div class="py-4">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="block w-full p-5">
                     <!--v-if-->
-                    <form class="flex flex-col gap-4" action="<?php echo 'http://' . $_SERVER['HTTP_HOST']. '/appointment/store'; ?>" method="post">
+                    <form class="flex flex-col gap-4" action="<?php if(empty($data['id'])) {echo 'http://' . $_SERVER['HTTP_HOST']. '/appointment/store';} else {echo 'http://' . $_SERVER['HTTP_HOST']. '/appointment/update/' . $data['id'];}?>"  method="post">
                         <?php 
                             if(!empty($data['registerError'])) {
                                 echo '<span style="font-size: 14px; font-weight: 300; line-height: 18px; color: red;">' . $data['registerError'] . '</span>';
