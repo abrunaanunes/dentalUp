@@ -4,16 +4,21 @@ namespace app\Models;
 
 use database\Database;
 
-class Appointment
+class Client
 {
     private $name;
     private $email;
-    private $password;
+    private $cpf;
+    private $phone;
     private $is_active;
     private $db;
 
-    //Setters
+    public function __construct()
+    {
+        $this->db = new Database();
+    }
 
+    //Setters
     public function setName($string)
     {
         $this->name = $string;
@@ -79,6 +84,17 @@ class Appointment
         if($this->db->execute()) {
             return true;
         } 
+        return false;
+    }
+
+    public function findClientByEmail($email) 
+    {
+        $this->db->query('SELECT * FROM clients WHERE email = :email');
+        $this->db->bind(':email', $email);
+        if($this->db->rowCount() > 0) {
+            return true;
+        }
+
         return false;
     }
 }
