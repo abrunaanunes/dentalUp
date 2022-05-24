@@ -33,6 +33,11 @@ class Appointment
         $this->user_id = $id;
     }
 
+    public function dentist($id)
+    {
+        $this->dentist_id = $id;
+    }
+
     public function client($id)
     {
         $this->client_id = $id;
@@ -51,7 +56,12 @@ class Appointment
 
     public function getUser()
     {
-        return $this->user_id;
+        return 1;
+    }
+
+    public function getDentist()
+    {
+        return $this->dentist_id;
     }
 
     public function getClient()
@@ -62,12 +72,14 @@ class Appointment
     //Include
     public function setAppointment()
     {
-        $this->db->query('INSERT INTO appointments (`appointment_date`, `appointment_reason`, `user_id`, `client_id`) VALUES (:appointment_date, :appointment_reason, :user_id, :client_id)');
+        $this->db->query('INSERT INTO appointments (`appointment_date`, `appointment_reason`, `dentist_id`, `client_id`, `user_id`, `created_at`) VALUES (:appointment_date, :appointment_reason, :dentist_id, :client_id, :user_id, :created_at)');
 
-        $this->db->bind(':appointment_date', $this->getName());
-        $this->db->bind(':appointment_reason', $this->getEmail());
-        $this->db->bind(':user_id', $this->getUser());
+        $this->db->bind(':appointment_date', $this->getAppointmentDate());
+        $this->db->bind(':appointment_reason', $this->getAppointmentReason());
+        $this->db->bind(':dentist_id', $this->getDentist());
         $this->db->bind(':client_id', $this->getClient());
+        $this->db->bind(':user_id', $this->getUser());
+        $this->db->bind(':created_at', date('Y-m-d H:i:s'));
 
         if($this->db->execute()) {
             return true;
