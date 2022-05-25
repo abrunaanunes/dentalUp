@@ -89,7 +89,7 @@ class Client
 
     public function updateClient($id)
     {
-        $this->db->query('UPDATE clients SET `name`=:name, `email`=:email, `cpf`=:cpf, `phone`=:phone WHERE `id`=:id)');
+        $this->db->query('UPDATE clients SET `name`=:name, `email`=:email, `cpf`=:cpf, `phone`=:phone WHERE `id`=:id');
 
         $this->db->bind(':name', $this->getName());
         $this->db->bind(':email', $this->getEmail());
