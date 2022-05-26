@@ -32,7 +32,7 @@
                                 <?php if (!empty($clients) && is_array($clients) || !empty($clients) && is_object($clients)) : ?>    
                                     <option value="" disabled selected>Selecione</option>
                                     <?php foreach ($clients as $client) : ?>
-                                        <option value="<?php echo $client->id; ?>" <?php if($appointment['client_id'] == $client->id) { echo 'selected'; } ?> ><?php echo $client->name; ?></option>
+                                        <option value="<?php echo $client->id; ?>" <?php if(!empty($appointment) && $appointment['client_id'] == $client->id) { echo 'selected'; } ?> ><?php echo $client->name; ?></option>
                                     <?php endforeach; ?>
                                 <?php else : ?>
                                     <option value="" disabled selected>Não há clientes cadastrados</option>
@@ -48,7 +48,7 @@
                             <?php if (!empty($dentists) && is_array($dentists) || !empty($dentists) && is_object($dentists)) : ?>    
                                     <option value="" disabled selected>Selecione</option>
                                     <?php foreach ($dentists as $dentist) : ?>
-                                        <option value="<?php echo $dentist->id; ?>" <?php if($appointment['dentist_id'] == $dentist->id) { echo 'selected'; } ?> ><?php echo $dentist->name; ?></option>
+                                        <option value="<?php echo $dentist->id; ?>" <?php if(!empty($appointment) && $appointment['dentist_id'] == $dentist->id) { echo 'selected'; } ?> ><?php echo $dentist->name; ?></option>
                                     <?php endforeach; ?>
                                 <?php else : ?>
                                     <option value="" disabled selected>Não há dentistas cadastrados</option>
