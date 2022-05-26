@@ -20,14 +20,12 @@ ministrada pelo professor Diego Roberto Antunes na Universidade Tecnológica Fed
 
 ## Sobre o sistema
 O sistema DentalUp é uma proposta de gerenciamento de consultas, clientes e cirurgiões-dentistas para consultórios.
-O sistema permite o cadastro de clientes, através do painel admin é possível cadastrar funcionários e há também um 
-usuário do tipo admin que possui todas as permissões. Nesse sentido, o sistema conta com autênticação de login e diferentes
-perfis (roles) de usuários.
+O sistema permite o cadastro de clientes, através do painel admin é possível cadastrar funcionários.
+Nesse sentido, o sistema conta com autênticação de login.
 
-Até o momento não foram implementadas todas as funcionalidades.
-Nessa primeira etapa priorizamos criar o escopo para o projeto, arquitetar a estrutura de diretórios e afins.
-Desta forma, há possibilidade de cadastrar-se porém sem um perfil definido (role), também foi implementada a validação de login, 
-autênticação de sessões e o uso do banco de dados.
+Nesta segunda etapa é possível cadastrar dentistas, clientes e consultas. As consultas possuem relacionamento com clientes e dentistas e as chaves estrangeiras são armazenadas na tabela consultas.
+Além disso, nesta segunda etapa foi implementada a conexão com banco de dados MySQL com auxílio do PDO. 
+Para a exclusão dos dados no CRUD, foi utilizado um script (Javascript) para a confirmação de exclusão.
 
 ## Partes desenvolvidas por cada integrante:
 
@@ -36,7 +34,7 @@ Responsável por desenvolver o front-end incluindo formulários de login, cadast
 O principal objetivo foi criar telas com design clean para facilitar a visualização e entendimento
 do usuário, promovendo desta forma uma iteração humano computador que resultasse em uma boa experiência
 para o usuário.
-As principais tecnologias utilizadas foram HTML, CSS e Tailwind.
+As principais tecnologias utilizadas foram HTML, CSS, Javascript e Tailwind.
 
 #### Bruna Nunes (RA: 2328585) 
 Responsável por desenvolver o back-end onde foram feitas validações, autênticação com sessões,
@@ -46,6 +44,7 @@ As prinicipais tecnologias utilizadas foram PHP, MySQL, Workbench e, além desta
 #### Leodocir Neto (RA: 2257122)
 Responsável por criar as regras de negócio, redigir a documentação e 
 auxiliar no desenvolvimento através da instalação do projeto em demais máquinas para fins de teste.
+Auxilio no desenvolvimento do front-end na segunda etapa.
 
 ## Tecnologias utilizadas no proejto
 - PHP
@@ -56,3 +55,4 @@ auxiliar no desenvolvimento através da instalação do projeto em demais máqui
 - HTML
 - CSS
 - Tailwind
+- Javascript
