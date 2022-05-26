@@ -4,6 +4,7 @@ namespace app\Controllers;
 use app\Helpers\Render;
 use app\Helpers\Session;
 use app\Models\User;
+use database\Database;
 use Pecee\SimpleRouter\SimpleRouter;
 
 class FrontController
@@ -20,10 +21,29 @@ class FrontController
     
     public function index()
     {
-        if($this->isLoggedIn()) {
-            return $this->RenderHtml('dashboard.php', []);
-        }
+        $this->db = new Database();
+        $this->db->query('SELECT * FROM appointments');
+        $this->db->execute();
+        $appointments = $this->db->rowCount();
 
+        $this->db->query('SELECT * FROM dentists');
+        $this->db->execute();
+        $dentists = $this->db->rowCount();
+
+        $this->db->query('SELECT * FROM clients');
+        $this->db->execute();
+        $clients = $this->db->rowCount();
+
+
+
+        if($this->isLoggedIn()) {
+            return $this->RenderHtml('dashboard.php', [
+                'appointments' => $appointments,
+                'dentists' => $dentists,
+                'clients' => $clients,
+            ]);
+        }
+        
         return $this->RenderHtml('login.php', []);
     }
 
@@ -66,7 +86,7 @@ class FrontController
 
         if($loggedInUser) {
             $this->createUserSession($data['email']);
-            SimpleRouter::response()->redirect('/dashboard');
+            SimpleRouter::response()->redirect('/');
         } else {
             $errors['loginError'] = "E-mail ou senha incorretos. Por favor, tente novamente.";
             return $this->RenderHtml('login.php', $errors);

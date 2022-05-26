@@ -8,7 +8,6 @@ SimpleRouter::group([
     SimpleRouter::post('/login', 'FrontController@login');
     SimpleRouter::get('/logout', 'FrontController@logout');
     SimpleRouter::get('/register', 'FrontController@register');
-    SimpleRouter::get('/dashboard', 'DashboardController@index');
 });
 
 SimpleRouter::group([

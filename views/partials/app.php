@@ -19,8 +19,8 @@
                         <div class="w-full flex justify-between items-center">
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
-                                <a href="/dashboard">
-                                    <img src="../public/img/dentalup_logo.png" class="w-6/12">
+                                <a href="/">
+                                    <img src="http://<?php echo $_SERVER['HTTP_HOST']; ?>/public/img/dentalup_logo.png" class="w-6/12">
                                 </a>
                             </div>
                             <!-- Navigation Links -->

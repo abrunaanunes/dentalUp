@@ -25,7 +25,7 @@ class AppointmentController implements Controller
     
     public function index()
     {
-        $this->db->query('SELECT * FROM appointments JOIN dentists ON appointments.dentist_id=dentists.id;');
+        $this->db->query('SELECT * FROM appointments');
         $appointments = $this->db->resultSet();
 
         return $this->RenderHtml('appointment/index.php', [
@@ -76,11 +76,21 @@ class AppointmentController implements Controller
 
     public function edit($id)
     {
+        $this->db->query('SELECT * FROM clients');
+        $clients = $this->db->resultSet();
+
+        $this->db->query('SELECT * FROM dentists');
+        $dentists = $this->db->resultSet();
+        
         $this->db->query('SELECT * FROM appointments WHERE id = :id');
         $this->db->bind(':id', $id);
-        $data = (array) $this->db->single();
+        $appointment = (array) $this->db->single();
 
-        return $this->renderHtml('appointment/form.php', $data);
+        return $this->RenderHtml('appointment/form.php', [
+            'clients' => $clients,
+            'dentists' => $dentists,
+            'appointment' => $appointment,
+        ]);
     }
 
     public function update($id)
